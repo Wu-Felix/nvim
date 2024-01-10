@@ -1,10 +1,13 @@
 {
   "extras": [
-    "lazyvim.plugins.extras.editor.symbols-outline",
+    "lazyvim.plugins.extras.coding.copilot",
     "lazyvim.plugins.extras.lang.clangd",
+    "lazyvim.plugins.extras.lang.markdown",
     "lazyvim.plugins.extras.lang.python",
     "lazyvim.plugins.extras.lang.python-semshi",
     "lazyvim.plugins.extras.ui.edgy",
+    "lazyvim.plugins.extras.util.dot",
+    "lazyvim.plugins.extras.util.mini-hipatterns",
     "lazyvim.plugins.extras.util.project"
   ],
   "news": {
