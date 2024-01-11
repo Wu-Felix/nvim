@@ -26,7 +26,6 @@ local nmappings = {
   -- Joshuto
 }
 -- vim.keymap.del("n", "<Leader>gg", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>gg", ":LazyGit<CR>", { noremap = true, silent = true })
 
 for _, mapping in ipairs(nmappings) do
   vim.keymap.set(mapping.mode or "n", mapping.from, mapping.to, { noremap = true })
