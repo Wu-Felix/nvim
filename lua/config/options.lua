@@ -5,3 +5,9 @@
 local opt = vim.opt
 opt.timeoutlen = 1000
 opt.cursorline = false
+vim.cmd(
+  [[
+	let g:python3_host_prog = 'D:\\software\\anaconda3\\python'
+]],
+  false
+)

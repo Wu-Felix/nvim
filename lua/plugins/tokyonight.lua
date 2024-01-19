@@ -9,5 +9,4 @@ return {
       },
     },
   },
-  vim.api.nvim_set_keymap("n", "gb", "<Cmd>BufferLinePick<CR>", { noremap = true, silent = true }),
 }
