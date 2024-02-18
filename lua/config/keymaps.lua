@@ -18,8 +18,4 @@ key.set("n", "gp", "<cmd>Lspsaga peek_definition<CR>")
 key.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>")
 key.set("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>") -- jump to previous diagnostic in buffer
 key.set("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>")
-key.set("n", "<leader>tw", "<cmd>FloatermNew powershell<CR>")
-function mdk()
-  print("jkkj")
-end
-key.set("n", "<leader>te", mdk)
+-- key.set("n", "<c-o>", "<cmd>!explorer .<CR>", { noremap = true, silent = true })
