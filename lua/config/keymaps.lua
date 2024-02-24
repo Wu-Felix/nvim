@@ -3,6 +3,7 @@
 -- Add any additional keymaps here
 -- This file is automatically loaded by lazyvim.config.initlocal
 local key = vim.keymap
+local Util = require("lazyvim.util")
 vim.keymap.set("n", "gb", "<Cmd>BufferLinePick<CR>", { noremap = true, silent = true })
 key.set("i", "jk", "<esc>")
 
@@ -18,8 +19,15 @@ key.set("n", "gp", "<cmd>Lspsaga peek_definition<CR>")
 key.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>")
 key.set("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>") -- jump to previous diagnostic in buffer
 key.set("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>")
-key.set("n", "<leader>tw", "<cmd>FloatermNew powershell<CR>")
-function mdk()
-  print("jkkj")
-end
-key.set("n", "<leader>te", mdk)
+key.set("n", "<leader>ee", function()
+  local str = vim.api.nvim_buf_get_name(0)
+  local index
+  index, _ = string.find(vim.api.nvim_buf_get_name(0), "[^\\]*$")
+  local new_str = string.sub(str, 1, index - 2)
+  local command = "!explorer " .. new_str
+  vim.api.nvim_command(command)
+end, { noremap = true, silent = true })
+key.set("n", "<leader>ed", function()
+  local root = "!explorer " .. Util.root()
+  vim.api.nvim_command(root)
+end, { noremap = true, silent = true })
