@@ -31,3 +31,8 @@ key.set("n", "<leader>ed", function()
   local root = "!explorer " .. Util.root()
   vim.api.nvim_command(root)
 end, { noremap = true, silent = true })
+key.set("n", "<leader>oe", function()
+  local str = vim.api.nvim_buf_get_name(0)
+  local command = "!code " .. str
+  vim.api.nvim_command(command)
+end, { noremap = true, silent = true })
