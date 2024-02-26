@@ -10,10 +10,8 @@
     "lazyvim.plugins.extras.lang.python",
     "lazyvim.plugins.extras.lang.python-semshi",
     "lazyvim.plugins.extras.ui.edgy",
-    "lazyvim.plugins.extras.util.dot",
     "lazyvim.plugins.extras.util.mini-hipatterns",
-    "lazyvim.plugins.extras.util.project",
-    "lazyvim.plugins.extras.vscode"
+    "lazyvim.plugins.extras.util.project"
   ],
   "news": {
     "NEWS.md": "2191"

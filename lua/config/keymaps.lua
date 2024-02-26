@@ -2,37 +2,38 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 -- This file is automatically loaded by lazyvim.config.initlocal
-local key = vim.keymap
 local Util = require("lazyvim.util")
-vim.keymap.set("n", "gb", "<Cmd>BufferLinePick<CR>", { noremap = true, silent = true })
-key.set("i", "jk", "<esc>")
+local map = Util.safe_keymap_set
+map("n", "gb", "<Cmd>BufferLinePick<CR>", { noremap = true, silent = true })
+map("i", "jk", "<esc>")
 
 -- windown
-key.set("n", "qf", "<C-w>o")
-key.set("n", "<up>", ":res +5<CR>", { noremap = true, silent = true })
-key.set("n", "<down>", ":res -5<CR>", { noremap = true, silent = true })
-key.set("n", "<left>", ":vertical resize-5<CR>", { noremap = true, silent = true })
-key.set("n", "<right>", ":vertical resize+5<CR>", { noremap = true, silent = true })
+map("n", "qf", "<C-w>o")
+map("n", "<up>", ":res -5<CR>", { noremap = true, silent = true })
+map("n", "<down>", ":res +5<CR>", { noremap = true, silent = true })
+map("n", "<left>", ":vertical resize+5<CR>", { noremap = true, silent = true })
+map("n", "<right>", ":vertical resize-5<CR>", { noremap = true, silent = true })
 
 -- Lspsaga
-key.set("n", "gp", "<cmd>Lspsaga peek_definition<CR>")
-key.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>")
-key.set("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>") -- jump to previous diagnostic in buffer
-key.set("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>")
-key.set("n", "<leader>ee", function()
+
+local function getPwd()
   local str = vim.api.nvim_buf_get_name(0)
   local index
   index, _ = string.find(vim.api.nvim_buf_get_name(0), "[^\\]*$")
   local new_str = string.sub(str, 1, index - 2)
-  local command = "!explorer " .. new_str
+  return new_str
+end
+
+map("n", "<leader>ee", function()
+  local command = "!explorer " .. getPwd()
   vim.api.nvim_command(command)
 end, { noremap = true, silent = true })
-key.set("n", "<leader>ed", function()
+
+map("n", "<leader>ed", function()
   local root = "!explorer " .. Util.root()
   vim.api.nvim_command(root)
 end, { noremap = true, silent = true })
-key.set("n", "<leader>oe", function()
-  local str = vim.api.nvim_buf_get_name(0)
-  local command = "!code " .. str
-  vim.api.nvim_command(command)
-end, { noremap = true, silent = true })
+
+map("n", "<leader>et", function()
+  Util.terminal(nil, { cwd = getPwd() })
+end, { desc = "Terminal (file dir)" })
