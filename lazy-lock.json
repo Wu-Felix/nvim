@@ -75,4 +75,3 @@
   "vim-startuptime": { "branch": "master", "commit": "308b0088a864c4711a96e45b6734cf9294074f65" },
   "vim-visual-multi": { "branch": "master", "commit": "fe1ec7e430013b83c8c2dee85ae496251b71e253" },
   "vimtex": { "branch": "master", "commit": "afac40289eed684ab1301390dcd246b1609f8119" }
-}

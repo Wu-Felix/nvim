@@ -9,16 +9,12 @@ map("i", "jk", "<esc>")
 
 -- windown
 map("n", "qf", "<C-w>o")
-map("n", "<up>", ":res +5<CR>", { noremap = true, silent = true })
-map("n", "<down>", ":res -5<CR>", { noremap = true, silent = true })
-map("n", "<left>", ":vertical resize-5<CR>", { noremap = true, silent = true })
-map("n", "<right>", ":vertical resize+5<CR>", { noremap = true, silent = true })
+map("n", "<up>", ":res -5<CR>", { noremap = true, silent = true })
+map("n", "<down>", ":res +5<CR>", { noremap = true, silent = true })
+map("n", "<left>", ":vertical resize+5<CR>", { noremap = true, silent = true })
+map("n", "<right>", ":vertical resize-5<CR>", { noremap = true, silent = true })
 
 -- Lspsaga
-map("n", "gp", "<cmd>Lspsaga peek_definition<CR>")
-map("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>")
-map("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>") -- jump to previous diagnostic in buffer
-map("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>")
 
 local function getPwd()
   local str = vim.api.nvim_buf_get_name(0)
@@ -27,7 +23,6 @@ local function getPwd()
   local new_str = string.sub(str, 1, index - 2)
   return new_str
 end
-
 map("n", "<leader>ee", function()
   local command = "!explorer " .. getPwd()
   vim.api.nvim_command(command)

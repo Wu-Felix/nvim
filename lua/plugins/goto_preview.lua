@@ -1,3 +1,4 @@
+--预览窗口
 return {
   "rmagatti/goto-preview",
   lazy = true,
