@@ -1,3 +1,4 @@
+--输入切换
 return {
   "keaising/im-select.nvim",
   config = function()

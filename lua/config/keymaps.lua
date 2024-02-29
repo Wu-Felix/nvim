@@ -23,7 +23,6 @@ local function getPwd()
   local new_str = string.sub(str, 1, index - 2)
   return new_str
 end
-
 map("n", "<leader>ee", function()
   local command = "!explorer " .. getPwd()
   vim.api.nvim_command(command)

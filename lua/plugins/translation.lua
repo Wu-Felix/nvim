@@ -1,3 +1,4 @@
+--翻译软件
 return {
   {
     "potamides/pantran.nvim",
