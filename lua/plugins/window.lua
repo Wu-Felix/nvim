@@ -18,7 +18,7 @@ return {
         other_win_hl_color = "#e35e4f",
       })
 
-      vim.keymap.set("n", ",w", function()
+      vim.keymap.set("n", "<leader>wj", function()
         local picked_window_id = picker.pick_window({
           include_current_win = true,
         }) or vim.api.nvim_get_current_win()
@@ -37,7 +37,7 @@ return {
         vim.api.nvim_win_set_buf(0, target_buffer)
       end
 
-      vim.keymap.set("n", ",W", swap_windows, { desc = "Swap windows" })
+      vim.keymap.set("n", "<leader>wJ", swap_windows, { desc = "Swap windows" })
     end,
   },
 }
