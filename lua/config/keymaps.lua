@@ -13,6 +13,7 @@ map("n", "<up>", ":res -5<CR>", { noremap = true, silent = true })
 map("n", "<down>", ":res +5<CR>", { noremap = true, silent = true })
 map("n", "<left>", ":vertical resize+5<CR>", { noremap = true, silent = true })
 map("n", "<right>", ":vertical resize-5<CR>", { noremap = true, silent = true })
+map("n", "<leader>f", ":Yazi<CR>", { noremap = true, silent = true })
 
 -- Lspsaga
 
