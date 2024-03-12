@@ -39,6 +39,7 @@ return {
         treesitter = true,
         treesitter_context = true,
         which_key = true,
+        dap_ui = true,
       },
     },
   },
