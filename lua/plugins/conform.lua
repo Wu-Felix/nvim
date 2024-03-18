@@ -4,7 +4,7 @@ return {
     optional = true,
     opts = {
       formatters_by_ft = {
-        ["c"] = { "astyle" },
+        ["c"] = { "clang_format" },
       },
     },
   },
