@@ -56,4 +56,8 @@ return {
       }
     end,
   },
+  {
+    "nvim-neotest/neotest",
+    dependencies = { "nvim-neotest/nvim-nio" },
+  },
 }
