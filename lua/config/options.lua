@@ -5,6 +5,8 @@
 local opt = vim.opt
 opt.timeoutlen = 1000
 opt.cursorline = false
+opt.list = false
+vim.o.termguicolors = true
 vim.cmd(
   [[
 	let g:python3_host_prog = 'D:\\software\\python\\python'

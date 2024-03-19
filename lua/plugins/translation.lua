@@ -16,7 +16,7 @@ return {
             -- vim.pretty_print(require("pantran.engines").yandex:languages()) end)`
             -- can be used to list available language identifiers.
             default_source = "auto",
-            default_target = "zh",
+            default_target = "Chainese",
             --测试
           },
         },
