@@ -36,6 +36,11 @@ end, { noremap = true, silent = true })
 map("n", "<leader>et", function()
   Util.terminal(nil, { cwd = getPwd() })
 end, { desc = "Terminal (file dir)" })
+
 map("n", "<leader>gm", function()
+  Util.terminal({ "musicfox" }, { cwd = Util.root(), esc_esc = false, ctrl_hjkl = false })
+end, { desc = "musicfox" })
+
+map("n", "<leader>tre", function()
   Util.terminal({ "musicfox" }, { cwd = Util.root(), esc_esc = false, ctrl_hjkl = false })
 end, { desc = "musicfox" })
